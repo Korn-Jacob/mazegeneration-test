@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='maze.css') }}">
+</head>
+<body>
+    <div class="grid">
+        {% for row in range(board|length) %}
+            {% for column in range(board[0]|length) %}
+                <div class="tile" style="background-color: {{ 'black' if board[row][column] == '#' else 'white' }}; grid-row: {{ row + 1 }}; grid-column: {{ column + 1 }}"></div>
+            {% endfor %} 
+        {% endfor %}
+    </div>
+    <script>
+        console.log({{board}})
+    </script>
+</body>
+</html>

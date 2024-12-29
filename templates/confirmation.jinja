@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator</title>
+</head>
+<body>
+    <h1>Hello there.</h1><br>
+    <p>It appears you want to generate a maze of size {{size}}. That's very big.</p><br>
+    <p>This maze generation system works on a randomized DFS algorithm that runs recursively at what I'm pretty sure is at best O(n^2).</p><br>
+    <p>It's not too bad, except n^2 here is {{size*size}}. That's a lot of time and memory.</p><br>
+    {% if size < 10000 %}
+        <p>However, I'll let you try it anyway. Be warned: this may take a while. It may even crash python's recursion limit (which I overrided to {{10**7}})</p><br>
+        <form action="/maze" method="GET">
+            <label for="confirm">I understand</label>
+            <input type="checkbox" value="true" name="confirmation" id="confirm" required><br>
+            <input type="hidden" value="{{size}}" name="size">
+            <input type="submit" value="Go!">
+        </form>
+    {% endif %}
+</body>
+</html>

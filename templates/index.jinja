@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <h1>Generate a random maze:</h1>
+    <form action="/maze" method="GET">
+        <div>
+            <label for="size">Maze size: <span id='maze-size'>10</span></label>
+            <input type="range" min="5" max="25" name="size" id="size" value="10">
+        </div>
+        <input type="submit" value="Go!">
+    </form>
+    <script>
+        let size = document.getElementById("size");
+        let span = document.getElementById("maze-size");
+        size.onchange = () => {
+            span.innerText = size.value;
+        }
+    </script>
+</body>
+</html>

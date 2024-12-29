@@ -1,0 +1,15 @@
+* {
+    --tile-size: 25px
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(100, var(--tile-size));
+    grid-template-columns: repeat(100, var(--tile-size));
+    gap: 0px;
+}
+
+.tile {
+    width: var(--tile-size);
+    height: var(--tile-size);
+}
