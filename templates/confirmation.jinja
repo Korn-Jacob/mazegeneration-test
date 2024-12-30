@@ -11,7 +11,7 @@
     <p>This maze generation system works on a randomized DFS algorithm that runs recursively at what I'm pretty sure is at best O(n^2).</p><br>
     <p>It's not too bad, except n^2 here is {{size*size}}. That's a lot of time and memory.</p><br>
     {% if size < 10000 %}
-        <p>However, I'll let you try it anyway. Be warned: this may take a while. It may even crash python's recursion limit (which I overrided to {{10**7}})</p><br>
+        <p>However, I'll let you try it anyway. Be warned: this may take a while. It may crash python's recursion limit (which I overrided to {{10**7}}). It may even just use more memory than my free hosting platform allows.</p><br>
         <form action="/maze" method="GET">
             <label for="confirm">I understand</label>
             <input type="checkbox" value="true" name="confirmation" id="confirm" required><br>

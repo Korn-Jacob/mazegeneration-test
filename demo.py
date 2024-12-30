@@ -15,4 +15,4 @@ def show_maze():
     return render_template('maze.jinja', board=randomized_dfs_maze(size))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
